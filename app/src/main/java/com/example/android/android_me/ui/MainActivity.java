@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
     private int bodyIndex;
     private int legIndex;
 
-    // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI
+    // COMPLETED (3) Create a variable to track whether to display a two-pane or single-pane UI
         // A single-pane display refers to phone screens, and two-pane to larger tablet screens
+    private boolean mTwoPane;
 
 
     @Override
@@ -46,7 +47,15 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
         // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image
         // Also, for the two-pane display, get rid of the "Next" button in the master list fragment
+        if (findViewById(R.id.android_me_linear_layout) != null){
+            mTwoPane = true;
 
+            if (savedInstanceState == null){
+
+            }
+        } else {
+            mTwoPane = false;
+        }
     }
 
     // Define the behavior for onImageSelected
